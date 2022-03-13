@@ -1,11 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import { alpha, useTheme } from '@mui/material/styles';
-import MenuIcon from '@mui/icons-material/Menu';
+import React from "react";
+import PropTypes from "prop-types";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import { alpha, useTheme } from "@mui/material/styles";
+import MenuIcon from "@mui/icons-material/Menu";
+import warblerLogo from "../../../../assets/warbler_logo.png";
 
-import { NavItem } from './components';
+import { NavItem } from "./components";
 
 const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
   const theme = useTheme();
@@ -21,87 +22,47 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
 
   return (
     <Box
-      display={'flex'}
-      justifyContent={'space-between'}
-      alignItems={'center'}
+      display={"flex"}
+      justifyContent={"space-between"}
+      alignItems={"center"}
       width={1}
     >
       <Box
-        display={'flex'}
+        display={"flex"}
         component="a"
         href="/"
         title="theFront"
         width={{ xs: 100, md: 120 }}
       >
         <Box
-          component={'img'}
-          src={
-            mode === 'light' && !colorInvert
-              ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
-              : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'
-          }
+          component={"img"}
+          src={mode === "light" && !colorInvert ? warblerLogo : warblerLogo}
           height={1}
           width={1}
         />
       </Box>
-      <Box sx={{ display: { xs: 'none', md: 'flex' } }} alignItems={'center'}>
-        <Box>
-          <NavItem
-            title={'Landings'}
-            id={'landing-pages'}
-            items={landingPages}
-            colorInvert={colorInvert}
-          />
-        </Box>
+      <Box sx={{ display: { xs: "none", md: "flex" } }} alignItems={"center"}>
         <Box marginLeft={4}>
-          <NavItem
-            title={'Company'}
-            id={'company-pages'}
-            items={companyPages}
-            colorInvert={colorInvert}
-          />
-        </Box>
-        <Box marginLeft={4}>
-          <NavItem
-            title={'Account'}
-            id={'account-pages'}
-            items={accountPages}
-            colorInvert={colorInvert}
-          />
-        </Box>
-        <Box marginLeft={4}>
-          <NavItem
-            title={'Pages'}
-            id={'secondary-pages'}
-            items={secondaryPages}
-            colorInvert={colorInvert}
-          />
-        </Box>
-        <Box marginLeft={4}>
-          <NavItem
-            title={'Blog'}
-            id={'blog-pages'}
-            items={blogPages}
-            colorInvert={colorInvert}
-          />
-        </Box>
-        <Box marginLeft={4}>
-          <NavItem
-            title={'Portfolio'}
-            id={'portfolio-pages'}
-            items={portfolioPages}
-            colorInvert={colorInvert}
-          />
+          <Button
+            variant="contained"
+            color="primary"
+            component="a"
+            target="blank"
+            href="https://omniform1.com/signup/v1/622da9dd2241be81f89a21e3_622dad9eaadb345f9d931eab.html  "
+            size="large"
+          >
+            Join Newsletter
+          </Button>
         </Box>
       </Box>
-      <Box sx={{ display: { xs: 'block', md: 'none' } }} alignItems={'center'}>
+      <Box sx={{ display: { xs: "block", md: "none" } }} alignItems={"center"}>
         <Button
           onClick={() => onSidebarOpen()}
           aria-label="Menu"
-          variant={'outlined'}
+          variant={"outlined"}
           sx={{
             borderRadius: 2,
-            minWidth: 'auto',
+            minWidth: "auto",
             padding: 1,
             borderColor: alpha(theme.palette.divider, 0.2),
           }}

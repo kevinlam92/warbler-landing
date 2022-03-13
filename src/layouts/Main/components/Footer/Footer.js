@@ -1,12 +1,12 @@
-import React from 'react';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
-import Typography from '@mui/material/Typography';
-import { useTheme } from '@mui/material/styles';
+import React from "react";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Link from "@mui/material/Link";
+import Typography from "@mui/material/Typography";
+import { useTheme } from "@mui/material/styles";
 
-import InstagramIcon from '@mui/icons-material/Instagram';
+import warblerLogo from "../../../../assets/warbler_logo.png";
 
 const Footer = () => {
   const theme = useTheme();
@@ -16,74 +16,45 @@ const Footer = () => {
     <Grid container spacing={2}>
       <Grid item xs={12}>
         <Box
-          display={'flex'}
-          justifyContent={'space-between'}
-          alignItems={'center'}
+          display={"flex"}
+          justifyContent={"space-between"}
+          alignItems={"center"}
           width={1}
-          flexDirection={{ xs: 'column', sm: 'row' }}
+          flexDirection={{ xs: "column", sm: "row" }}
         >
           <Box
-            display={'flex'}
+            display={"flex"}
             component="a"
             href="/"
             title="theFront"
             width={80}
           >
             <Box
-              component={'img'}
-              src={
-                mode === 'light'
-                  ? 'https://assets.maccarianagency.com/the-front/logos/logo.svg'
-                  : 'https://assets.maccarianagency.com/the-front/logos/logo-negative.svg'
-              }
+              component={"img"}
+              src={mode === "light" ? warblerLogo : warblerLogo}
               height={1}
               width={1}
             />
-          </Box>
-          <Box display="flex" flexWrap={'wrap'} alignItems={'center'}>
-            <Box marginTop={1} marginRight={2}>
-              <Link
-                underline="none"
-                component="a"
-                href="https://instagram.com/eatdonyvr"
-                color="text.primary"
-                variant={'subtitle2'}
-              >
-                <InstagramIcon size={32} />
-              </Link>
-            </Box>
-            <Box marginTop={1}>
-              <Button
-                variant="contained"
-                color="primary"
-                component="a"
-                target="blank"
-                href="mailto:hello@eatdon.ca"
-                size="small"
-              >
-                Contact Us
-              </Button>
-            </Box>
           </Box>
         </Box>
       </Grid>
       <Grid item xs={12}>
         <Typography
-          align={'center'}
-          variant={'subtitle2'}
+          align={"center"}
+          variant={"subtitle2"}
           color="text.secondary"
           gutterBottom
         >
-          &copy; DON 2021, Pokey Okey Enterprises Ltd. All rights reserved
+          &copy; Warbler 2022. All rights reserved
         </Typography>
         <Typography
-          align={'center'}
-          variant={'caption'}
+          align={"center"}
+          variant={"caption"}
           color="text.secondary"
-          component={'p'}
+          component={"p"}
         >
           When you visit or interact with our sites, services or tools, we or
-          our authorised service providers may use cookies for storing
+          our authorized service providers may use cookies for storing
           information to help provide you with a better, faster and safer
           experience and for marketing purposes.
         </Typography>

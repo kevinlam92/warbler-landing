@@ -1,32 +1,33 @@
-import React, { useEffect } from 'react';
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import NoSsr from '@mui/material/NoSsr';
+import Box from "@mui/material/Box";
+import NoSsr from "@mui/material/NoSsr";
+import { useTheme } from "@mui/material/styles";
+import React, { useEffect } from "react";
 
-import Main from 'layouts/Main';
-import Container from 'components/Container';
+import Container from "components/Container";
+import Main from "layouts/Main";
+
 import {
-  Welcome,
+  Contact,
+  Curology,
   Goby,
-  Process,
-  Nike2,
   Larq,
   Nike,
-  Trek,
-  Curology,
+  Nike2,
+  Process,
   Reviews,
-  Contact,
-} from './components';
+  Trek,
+  Welcome,
+} from "./components";
 
 const Agency = () => {
   useEffect(() => {
     const jarallaxInit = async () => {
-      const jarallaxElems = document.querySelectorAll('.jarallax');
+      const jarallaxElems = document.querySelectorAll(".jarallax");
       if (!jarallaxElems || (jarallaxElems && jarallaxElems.length === 0)) {
         return;
       }
 
-      const { jarallax } = await import('jarallax');
+      const { jarallax } = await import("jarallax");
       jarallax(jarallaxElems, { speed: 0.2 });
     };
 
@@ -40,53 +41,53 @@ const Agency = () => {
         return;
       }
 
-      window.scrollTo({ left: 0, top: element.offsetTop, behavior: 'smooth' });
+      window.scrollTo({ left: 0, top: element.offsetTop, behavior: "smooth" });
     });
   };
 
   const theme = useTheme();
 
   const styles = (bgImage) => ({
-    position: 'absolute',
-    objectFit: 'cover',
+    position: "absolute",
+    objectFit: "cover",
     /* support for plugin https://github.com/bfred-it/object-fit-images */
-    fontFamily: 'object-fit: cover;',
+    fontFamily: "object-fit: cover;",
     top: 0,
     left: 0,
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
     zIndex: -1,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center center',
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center center",
     backgroundImage: `url(${bgImage})`,
-    filter: theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none',
+    filter: theme.palette.mode === "dark" ? "brightness(0.7)" : "none",
   });
 
   return (
     <Main>
       <Box
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
-        bgcolor={'alternate.main'}
+        minHeight={"100vh"}
+        display={"flex"}
+        alignItems={"center"}
+        bgcolor={"alternate.main"}
         marginTop={-13}
         paddingTop={13}
       >
         <Container>
-          <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
+          <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
             <Welcome />
             <Box marginTop={4}>
               <NoSsr>
                 <Box
-                  component={'svg'}
+                  component={"svg"}
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
                   width={{ xs: 30, sm: 40 }}
                   height={{ xs: 30, sm: 40 }}
-                  onClick={() => scrollTo('agency__portfolio-item--js-scroll')}
-                  sx={{ cursor: 'pointer' }}
+                  onClick={() => scrollTo("agency__portfolio-item--js-scroll")}
+                  sx={{ cursor: "pointer" }}
                 >
                   <path
                     fillRule="evenodd"
@@ -99,20 +100,20 @@ const Agency = () => {
           </Box>
         </Container>
       </Box>
-      <Box
-        className={'jarallax'}
+      {/* <Box
+        className={"jarallax"}
         data-jarallax
         data-speed="0.2"
-        position={'relative'}
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
+        position={"relative"}
+        minHeight={"100vh"}
+        display={"flex"}
+        alignItems={"center"}
         id="agency__portfolio-item--js-scroll"
       >
         <Box
-          className={'jarallax-img'}
+          className={"jarallax-img"}
           sx={styles(
-            'https://assets.maccarianagency.com/backgrounds/img48.jpg',
+            "https://assets.maccarianagency.com/backgrounds/img48.jpg"
           )}
         />
         <Container>
@@ -120,18 +121,18 @@ const Agency = () => {
         </Container>
       </Box>
       <Box
-        className={'jarallax'}
+        className={"jarallax"}
         data-jarallax
         data-speed="0.2"
-        position={'relative'}
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
+        position={"relative"}
+        minHeight={"100vh"}
+        display={"flex"}
+        alignItems={"center"}
       >
         <Box
-          className={'jarallax-img'}
+          className={"jarallax-img"}
           sx={styles(
-            'https://assets.maccarianagency.com/backgrounds/img44.jpg',
+            "https://assets.maccarianagency.com/backgrounds/img44.jpg"
           )}
         />
         <Container>
@@ -139,29 +140,29 @@ const Agency = () => {
         </Container>
       </Box>
       <Box
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
-        bgcolor={'alternate.main'}
+        minHeight={"100vh"}
+        display={"flex"}
+        alignItems={"center"}
+        bgcolor={"alternate.main"}
       >
         <Container>
           <Process />
         </Container>
       </Box>
       <Box
-        className={'jarallax'}
+        className={"jarallax"}
         data-jarallax
         data-speed="0.2"
-        position={'relative'}
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
+        position={"relative"}
+        minHeight={"100vh"}
+        display={"flex"}
+        alignItems={"center"}
         id="agency__portfolio-item--js-scroll"
       >
         <Box
-          className={'jarallax-img'}
+          className={"jarallax-img"}
           sx={styles(
-            'https://assets.maccarianagency.com/backgrounds/img45.jpg',
+            "https://assets.maccarianagency.com/backgrounds/img45.jpg"
           )}
         />
         <Container>
@@ -169,19 +170,19 @@ const Agency = () => {
         </Container>
       </Box>
       <Box
-        className={'jarallax'}
+        className={"jarallax"}
         data-jarallax
         data-speed="0.2"
-        position={'relative'}
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
+        position={"relative"}
+        minHeight={"100vh"}
+        display={"flex"}
+        alignItems={"center"}
         id="agency__portfolio-item--js-scroll"
       >
         <Box
-          className={'jarallax-img'}
+          className={"jarallax-img"}
           sx={styles(
-            'https://assets.maccarianagency.com/backgrounds/img43.jpg',
+            "https://assets.maccarianagency.com/backgrounds/img43.jpg"
           )}
         />
         <Container>
@@ -189,29 +190,29 @@ const Agency = () => {
         </Container>
       </Box>
       <Box
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
-        bgcolor={'alternate.main'}
+        minHeight={"100vh"}
+        display={"flex"}
+        alignItems={"center"}
+        bgcolor={"alternate.main"}
       >
         <Container>
           <Reviews />
         </Container>
       </Box>
       <Box
-        className={'jarallax'}
+        className={"jarallax"}
         data-jarallax
         data-speed="0.2"
-        position={'relative'}
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
+        position={"relative"}
+        minHeight={"100vh"}
+        display={"flex"}
+        alignItems={"center"}
         id="agency__portfolio-item--js-scroll"
       >
         <Box
-          className={'jarallax-img'}
+          className={"jarallax-img"}
           sx={styles(
-            'https://assets.maccarianagency.com/backgrounds/img47.jpg',
+            "https://assets.maccarianagency.com/backgrounds/img47.jpg"
           )}
         />
         <Container>
@@ -219,30 +220,30 @@ const Agency = () => {
         </Container>
       </Box>
       <Box
-        className={'jarallax'}
+        className={"jarallax"}
         data-jarallax
         data-speed="0.2"
-        position={'relative'}
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
+        position={"relative"}
+        minHeight={"100vh"}
+        display={"flex"}
+        alignItems={"center"}
         id="agency__portfolio-item--js-scroll"
       >
         <Box
-          className={'jarallax-img'}
+          className={"jarallax-img"}
           sx={styles(
-            'https://assets.maccarianagency.com/backgrounds/img46.jpg',
+            "https://assets.maccarianagency.com/backgrounds/img46.jpg"
           )}
         />
         <Container>
           <Nike2 />
         </Container>
-      </Box>
+      </Box> */}
       <Box
-        minHeight={'100vh'}
-        display={'flex'}
-        alignItems={'center'}
-        bgcolor={'alternate.main'}
+        minHeight={"100vh"}
+        display={"flex"}
+        alignItems={"center"}
+        bgcolor={"alternate.main"}
       >
         <Container>
           <Contact />

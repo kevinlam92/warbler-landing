@@ -1,66 +1,62 @@
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import { useTheme } from "@mui/material/styles";
+import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
+
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react';
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
+import React from "react";
+
+import iphoneScreen from "../../../../assets/iphone_screen.png";
 
 const Welcome = () => {
   const theme = useTheme();
 
+  const isMd = useMediaQuery(theme.breakpoints.up("md"), {
+    defaultMatches: true,
+  });
+
   const GridItemHeadlineBlock = () => (
     <Box>
-      <Typography
-        variant="h3"
-        align={'center'}
-        gutterBottom
-        sx={{
-          fontWeight: 900,
-        }}
-      >
-        DON by Pokey Okey
-      </Typography>
-      <Typography
-        variant="h6"
-        component="p"
-        color="text.secondary"
-        align={'center'}
-        sx={{
-          fontWeight: 400,
-        }}
-      >
-        Eat here
-        <br /> please
-      </Typography>
-    </Box>
-  );
-
-  const GridItemPartnersBlock = () => (
-    <Box display="flex" flexWrap="wrap" justifyContent={'center'}>
-      {[
-        'https://assets.maccarianagency.com/svg/logos/airbnb-original.svg',
-        'https://assets.maccarianagency.com/svg/logos/amazon-original.svg',
-        'https://assets.maccarianagency.com/svg/logos/fitbit-original.svg',
-        'https://assets.maccarianagency.com/svg/logos/netflix-original.svg',
-        'https://assets.maccarianagency.com/svg/logos/google-original.svg',
-        'https://assets.maccarianagency.com/svg/logos/paypal-original.svg',
-      ].map((item, i) => (
-        <Box maxWidth={80} marginTop={2} marginRight={4} key={i}>
+      <Grid container spacing={4} direction={isMd ? "row" : "column-reverse"}>
+        <Grid item xs={12} md={6} data-aos={isMd ? "fade-right" : "fade-up"}>
+          <Box marginBottom={2}>
+            <Typography variant={"h4"} sx={{ fontWeight: 700 }} gutterBottom>
+              Set goals
+            </Typography>
+            <Typography variant={"h4"} sx={{ fontWeight: 700 }} gutterBottom>
+              Improve discipline
+            </Typography>
+            <Typography variant={"h4"} sx={{ fontWeight: 700 }} gutterBottom>
+              Get feedback
+            </Typography>
+            <Typography variant={"h1"} sx={{ fontWeight: 700 }}>
+              Meet Warbler.
+            </Typography>
+          </Box>
+        </Grid>
+        <Grid
+          item
+          container
+          justifyContent="center"
+          alignItems="center"
+          xs={12}
+          md={6}
+          sx={{
+            display: { xs: "none", md: "flex" },
+          }}
+        >
           <Box
             component="img"
             height={1}
-            width={1}
-            src={item}
-            alt="..."
-            sx={{
-              filter:
-                theme.palette.mode === 'dark'
-                  ? 'brightness(0) invert(0.7)'
-                  : 'contrast(0) brightness(0)',
-            }}
+            width="auto"
+            maxHeight="50vh"
+            src={iphoneScreen}
           />
-        </Box>
-      ))}
+        </Grid>
+      </Grid>
     </Box>
   );
 
@@ -72,19 +68,9 @@ const Welcome = () => {
             width="100%"
             height="100%"
             display="flex"
-            justifyContent={'center'}
+            justifyContent={"center"}
           >
             <GridItemHeadlineBlock />
-          </Box>
-        </Grid>
-        <Grid item xs={12}>
-          <Box
-            width="100%"
-            height="100%"
-            display="flex"
-            justifyContent={'center'}
-          >
-            <GridItemPartnersBlock />
           </Box>
         </Grid>
       </Grid>
