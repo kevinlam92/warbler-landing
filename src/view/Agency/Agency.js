@@ -19,6 +19,8 @@ import {
   Welcome,
 } from "./components";
 
+import bgVideo from "../../assets/piano_practice.mp4";
+
 const Agency = () => {
   useEffect(() => {
     const jarallaxInit = async () => {
@@ -71,9 +73,18 @@ const Agency = () => {
         display={"flex"}
         alignItems={"center"}
         bgcolor={"alternate.main"}
-        marginTop={-13}
-        paddingTop={13}
       >
+        <Box
+          component="video"
+          autoPlay
+          muted
+          loop
+          src={bgVideo}
+          sx={{
+            filter: "contrast(33%);",
+            position: "absolute",
+          }}
+        />
         <Container>
           <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
             <Welcome />
@@ -87,7 +98,7 @@ const Agency = () => {
                   width={{ xs: 30, sm: 40 }}
                   height={{ xs: 30, sm: 40 }}
                   onClick={() => scrollTo("agency__portfolio-item--js-scroll")}
-                  sx={{ cursor: "pointer" }}
+                  sx={{ cursor: "pointer", position: "absolute", zIndex: 1 }}
                 >
                   <path
                     fillRule="evenodd"
@@ -100,26 +111,7 @@ const Agency = () => {
           </Box>
         </Container>
       </Box>
-      {/* <Box
-        className={"jarallax"}
-        data-jarallax
-        data-speed="0.2"
-        position={"relative"}
-        minHeight={"100vh"}
-        display={"flex"}
-        alignItems={"center"}
-        id="agency__portfolio-item--js-scroll"
-      >
-        <Box
-          className={"jarallax-img"}
-          sx={styles(
-            "https://assets.maccarianagency.com/backgrounds/img48.jpg"
-          )}
-        />
-        <Container>
-          <Goby />
-        </Container>
-      </Box>
+      {/*
       <Box
         className={"jarallax"}
         data-jarallax
@@ -238,7 +230,8 @@ const Agency = () => {
         <Container>
           <Nike2 />
         </Container>
-      </Box> */}
+      </Box>{" "}
+      */}
       <Box
         minHeight={"100vh"}
         display={"flex"}

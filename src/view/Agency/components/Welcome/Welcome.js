@@ -33,7 +33,7 @@ const Welcome = () => {
               Get feedback
             </Typography>
             <Typography variant={"h1"} sx={{ fontWeight: 700 }}>
-              Meet Warbler.
+              Meet Warbler
             </Typography>
           </Box>
         </Grid>
@@ -53,6 +53,7 @@ const Welcome = () => {
             height={1}
             width="auto"
             maxHeight="50vh"
+            sx={{ zIndex: 1 }}
             src={iphoneScreen}
           />
         </Grid>
