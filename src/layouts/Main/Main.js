@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
-import AppBar from '@mui/material/AppBar';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import AppBar from "@mui/material/AppBar";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
 
-import Container from 'components/Container';
-import TopNav from 'components/TopNav';
+import Container from "components/Container";
+import TopNav from "components/TopNav";
 
-import { Topbar, Sidebar, Footer } from './components';
+import { Topbar, Sidebar, Footer } from "./components";
 
-import pages from '../navigation';
+import pages from "../navigation";
 
-const Main = ({ children, colorInvert = false, bgcolor = 'transparent' }) => {
+const Main = ({ children, colorInvert = false, bgcolor = "transparent" }) => {
   const theme = useTheme();
-  const isMd = useMediaQuery(theme.breakpoints.up('md'), {
+  const isMd = useMediaQuery(theme.breakpoints.up("md"), {
     defaultMatches: true,
   });
 
@@ -39,13 +39,13 @@ const Main = ({ children, colorInvert = false, bgcolor = 'transparent' }) => {
 
   return (
     <Box>
-      <Box bgcolor={bgcolor} position={'relative'} zIndex={theme.zIndex.appBar}>
-        <Container paddingTop={'8px !important'} paddingBottom={'0 !important'}>
+      <Box bgcolor={bgcolor} position={"relative"} zIndex={theme.zIndex.appBar}>
+        <Container paddingTop={"8px !important"} paddingBottom={"0 !important"}>
           <TopNav colorInvert={colorInvert} />
         </Container>
       </Box>
       <AppBar
-        position={'sticky'}
+        position={"sticky"}
         sx={{
           top: 0,
           backgroundColor: trigger ? theme.palette.background.paper : bgcolor,
@@ -60,12 +60,12 @@ const Main = ({ children, colorInvert = false, bgcolor = 'transparent' }) => {
           />
         </Container>
       </AppBar>
-      <Sidebar
+      {/* <Sidebar
         onClose={handleSidebarClose}
         open={open}
         variant="temporary"
         pages={pages}
-      />
+      /> */}
       <main>
         {children}
         <Divider />

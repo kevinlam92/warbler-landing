@@ -55,7 +55,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
           </Button>
         </Box>
       </Box>
-      <Box sx={{ display: { xs: "block", md: "none" } }} alignItems={"center"}>
+      {/* <Box sx={{ display: { xs: "block", md: "none" } }} alignItems={"center"}>
         <Button
           onClick={() => onSidebarOpen()}
           aria-label="Menu"
@@ -69,7 +69,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
         >
           <MenuIcon />
         </Button>
-      </Box>
+      </Box> */}
     </Box>
   );
 };
