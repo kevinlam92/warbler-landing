@@ -83,6 +83,7 @@ const Agency = () => {
             src={bgVideo}
             sx={{
               filter: "contrast(50%) brightness(150%)",
+              width: "100%",
             }}
           />
         </Box>
