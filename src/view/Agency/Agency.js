@@ -74,17 +74,18 @@ const Agency = () => {
         alignItems={"center"}
         bgcolor={"alternate.main"}
       >
-        <Box
-          component="video"
-          autoPlay
-          muted
-          loop
-          src={bgVideo}
-          sx={{
-            filter: "contrast(33%);",
-            position: "absolute",
-          }}
-        />
+        <Box sx={{ position: "absolute", overflow: "hidden", width: "100vw" }}>
+          <Box
+            component="video"
+            autoPlay
+            muted
+            loop
+            src={bgVideo}
+            sx={{
+              filter: "contrast(50%) brightness(150%)",
+            }}
+          />
+        </Box>
         <Container>
           <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
             <Welcome />
