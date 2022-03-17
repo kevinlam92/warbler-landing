@@ -74,6 +74,7 @@ const Agency = () => {
         alignItems={"center"}
         bgcolor={"alternate.main"}
       >
+<<<<<<< HEAD
         <Box sx={{ position: "absolute", overflow: "hidden", width: "100vw" }}>
           <Box
             component="video"
@@ -87,6 +88,19 @@ const Agency = () => {
             }}
           />
         </Box>
+=======
+        <Box
+          component="video"
+          autoPlay
+          muted
+          loop
+          src={bgVideo}
+          sx={{
+            filter: "contrast(33%);",
+            position: "absolute",
+          }}
+        />
+>>>>>>> parent of 0054cee9... fix css
         <Container>
           <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
             <Welcome />
