@@ -81,7 +81,7 @@ const Agency = () => {
           loop
           src={bgVideo}
           sx={{
-            filter: "contrast(33%);",
+            filter: "contrast(33%) brightness(133%)",
             position: "absolute",
           }}
         />
